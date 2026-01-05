@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KMB Metro Infrastructure Projects - Metro, Dam, Infrastructure and International Projects">
+  <title>Projects | KMB Metro Infrastructure</title>
+  
+  <link rel="icon" type="image/x-icon" href="../../assets/images/ui/KMB_logo.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/css/style.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-primary: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+      --font-display: 'Sora', 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-grid">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../assets/images/ui/KMB_logo.JPG" alt="KMB Logo" style="height: 45px; border-radius: 8px;">
+        <span class="brand-accent">KMB</span> Metro Infrastructure
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="bi bi-list text-white fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.html" onclick="localStorage.setItem('kmbLang', 'en');">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="lang-switch">
+          <a href="../tr/projeler.html" class="lang-btn" style="text-decoration: none;">TR</a>
+          <a href="projects.html" class="lang-btn active" style="text-decoration: none;">EN</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="section bg-gradient-hero" style="padding-top: 140px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <span class="section-badge">Our Projects</span>
+          <h1 class="display-4 fw-bold mb-4">Completed & Ongoing Projects</h1>
+          <p class="lead text-secondary">Projects we have completed in Ukraine, Turkey, Russia, India and many other countries.</p>
+        </div>
+      </div>
+      
+      <!-- Quick Stats -->
+      <div class="row g-4 mt-4">
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">12+</div>
+            <div class="stat-label small">Metro Stations</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">5+</div>
+            <div class="stat-label small">Dam Projects</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">10+</div>
+            <div class="stat-label small">Infrastructure</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">8+</div>
+            <div class="stat-label small">International</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" style="background: var(--color-bg-secondary);">
+    <div class="container">
+      
+      <!-- Filter Buttons -->
+      <div class="filter-buttons mb-5 reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="metro">Metro</button>
+        <button class="filter-btn" data-filter="dam">Dam</button>
+        <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+        <button class="filter-btn" data-filter="superstructure">Superstructure</button>
+        <button class="filter-btn" data-filter="international">International</button>
+        <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+      </div>
+      
+      <!-- Projects Grid -->
+      <div class="row g-4">
+        
+        <!-- Metro Projects -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/ip1.jpg" alt="Ipodrom Metro" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Ipodrom Metro Station</h5>
+              <p class="card-text-custom">Kyiv, Ukraine</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2012</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/ip1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ip2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ip3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ip4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/vy1.jpg" alt="Vystavkovyi Tsentr" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Vystavkovyi Tsentr</h5>
+              <p class="card-text-custom">Kyiv, Ukraine</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2011</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/vy1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vy2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vy3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vy4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/de1.jpg" alt="Demiivska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Demiivska Metro Station</h5>
+              <p class="card-text-custom">Kyiv, Ukraine</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2010</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/de1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/de2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/de3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/de4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/go1.jpg" alt="Golosiivska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Golosiivska Metro Station</h5>
+              <p class="card-text-custom">Kyiv, Ukraine</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2010</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/va1.jpg" alt="Vasylkivska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Vasylkivska Metro Station</h5>
+              <p class="card-text-custom">Kyiv, Ukraine</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2010</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/bo1.jpg" alt="Boryspilska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Boryspilska Metro Station</h5>
+              <p class="card-text-custom">Kyiv, Ukraine</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2005</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dam Projects -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="dam">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/dam/dnister_pump.jpg" alt="Dnister Pump" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Dam</span>
+              <h5 class="card-title-custom">Dnister Pump Station</h5>
+              <p class="card-text-custom">Pumped storage power plant. 7 pump units, 32m depth, 50m height.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 1983</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="dam ongoing">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/dam/sadak-1.jpg" alt="Sadak Dam" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Ongoing</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Dam</span>
+              <h5 class="card-title-custom">Sadak Dam Irrigation</h5>
+              <p class="card-text-custom">73,600 decares irrigation area.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Turkey</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/dam/sadak-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/sadak-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/sadak-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="dam ongoing">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/dam/dom1.jpeg" alt="Domaniç Dam" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Ongoing</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Dam</span>
+              <h5 class="card-title-custom">Kütahya Domaniç Dam</h5>
+              <p class="card-text-custom">51.83 m height, 3.37 million m³ capacity.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Kütahya</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Infrastructure Projects -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="infrastructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/infrastructure/mksb-1.jpg" alt="Mustafa Kemal" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Infrastructure</span>
+              <h5 class="card-title-custom">Mustafa Kemal Coastal Boulevard</h5>
+              <p class="card-text-custom">1150 meters vehicle underpass.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Turkey</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2016</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="infrastructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/infrastructure/izmir-1.jpg" alt="İzmir Asphalt" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Infrastructure</span>
+              <h5 class="card-title-custom">İzmir Asphalt Coating</h5>
+              <p class="card-text-custom">60,000 tons binder, 40,000 tons wearing asphalt.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> İzmir</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2018</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Superstructure Projects -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="superstructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/superstructure/ky1.jpg" alt="Highways" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Superstructure</span>
+              <h5 class="card-title-custom">Highways Service Building</h5>
+              <p class="card-text-custom">70,000 m² smart building. 14 floors, 3 basements.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Turkey</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2017</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/superstructure/ky1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/ky2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/ky3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- International Projects -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/dwarka.png" alt="Dwarka" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">International</span>
+              <h5 class="card-title-custom">Dwarka Metro Station</h5>
+              <p class="card-text-custom">India's largest metro station. Solar power plant.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> India</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2014</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/voronez.png" alt="Voronez" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">International</span>
+              <h5 class="card-title-custom">Voronez Railway Tunnel</h5>
+              <p class="card-text-custom">700 m length, 8.5 m height.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Russia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/novoriski.png" alt="Novoriski" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">International</span>
+              <h5 class="card-title-custom">Novoriski Oil Tunnel</h5>
+              <p class="card-text-custom">3.3 km length, 5.6 m diameter.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Russia</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2012</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ongoing Projects -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="ongoing metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/ongoing/newmetro-1.jpg" alt="Kyiv Metro" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Ongoing</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Ongoing</span>
+              <h5 class="card-title-custom">Syrets-Vynohradar Metro Line</h5>
+              <p class="card-text-custom">3.7 km line. Mostytska and Prospekt Pravdy stations.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Kyiv</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2018+</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/ongoing/newmetro-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/newmetro-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/newmetro-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="ongoing metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/ongoing/dnipro-1.jpg" alt="Dnipro" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Ongoing</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Ongoing</span>
+              <h5 class="card-title-custom">Dnipro Metro Project</h5>
+              <p class="card-text-custom">4 km, 3 stations. NATM method.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukraine</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2016+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <img src="../../assets/images/ui/KMB_logo.JPG" alt="KMB" style="height: 40px; border-radius: 8px; margin-right: 10px;">
+            <span class="text-accent">KMB</span> Metro Infrastructure
+          </div>
+          <p class="footer-description mt-3">Leading company in infrastructure and metro construction since 1949.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-title">Services</h6>
+          <ul class="footer-links">
+            <li><a href="services.html">Metro</a></li>
+            <li><a href="services.html">Dam</a></li>
+            <li><a href="services.html">Tunnel</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="footer-title">Contact</h6>
+          <div class="footer-contact-item"><i class="bi bi-telephone"></i><span>+90 312 945 25 15</span></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope"></i><span>info@kmbmetroaltyapi.com</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 KMB Metro Infrastructure. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

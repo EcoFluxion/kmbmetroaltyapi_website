@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KMB Metro Altyapı Projeleri - Metro, Baraj, Altyapı ve Uluslararası Projeler">
+  <title>Projeler | KMB Metro Altyapı</title>
+  
+  <link rel="icon" type="image/x-icon" href="../../assets/images/ui/KMB_logo.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/css/style.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-primary: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+      --font-display: 'Sora', 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-grid">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../assets/images/ui/KMB_logo.JPG" alt="KMB Logo" style="height: 45px; border-radius: 8px;">
+        <span class="brand-accent">KMB</span> Metro Altyapı
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="bi bi-list text-white fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.html">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="hizmetler.html">Hizmetler</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projeler.html">Projeler</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        </ul>
+        <div class="lang-switch">
+          <a href="projeler.html" class="lang-btn active" style="text-decoration: none;">TR</a>
+          <a href="../en/projects.html" class="lang-btn" style="text-decoration: none;">EN</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="section bg-gradient-hero" style="padding-top: 140px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <span class="section-badge">Projelerimiz</span>
+          <h1 class="display-4 fw-bold mb-4">Tamamlanan ve Devam Eden Projeler</h1>
+          <p class="lead text-secondary">Ukrayna, Türkiye, Rusya, Hindistan ve daha birçok ülkede gerçekleştirdiğimiz projeler.</p>
+        </div>
+      </div>
+      
+      <!-- Quick Stats -->
+      <div class="row g-4 mt-4">
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">12+</div>
+            <div class="stat-label small">Metro İstasyonu</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">5+</div>
+            <div class="stat-label small">Baraj Projesi</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">10+</div>
+            <div class="stat-label small">Altyapı Projesi</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item p-3">
+            <div class="stat-value fs-2">8+</div>
+            <div class="stat-label small">Uluslararası</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" style="background: var(--color-bg-secondary);">
+    <div class="container">
+      
+      <!-- Filter Buttons -->
+      <div class="filter-buttons mb-5 reveal">
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="metro">Metro</button>
+        <button class="filter-btn" data-filter="dam">Baraj</button>
+        <button class="filter-btn" data-filter="infrastructure">Altyapı</button>
+        <button class="filter-btn" data-filter="superstructure">Üstyapı</button>
+        <button class="filter-btn" data-filter="international">Uluslararası</button>
+        <button class="filter-btn" data-filter="ongoing">Devam Eden</button>
+      </div>
+      
+      <!-- Projects Grid -->
+      <div class="row g-4">
+        
+        <!-- ========== METRO PROJECTS ========== -->
+        
+        <!-- Ipodrom -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/ip1.jpg" alt="Ipodrom Metro" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Ipodrom Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2012</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/ip1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7; cursor: pointer;">
+                <img src="../../assets/images/projects/metro/ip2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7; cursor: pointer;">
+                <img src="../../assets/images/projects/metro/ip3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7; cursor: pointer;">
+                <img src="../../assets/images/projects/metro/ip4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7; cursor: pointer;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vystavkovyi Tsentr -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/vy1.jpg" alt="Vystavkovyi Tsentr" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Vystavkovyi Tsentr</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2011</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/vy1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vy2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vy3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vy4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Demiivska -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/de1.jpg" alt="Demiivska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Demiivska Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2010</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/de1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/de2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/de3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/de4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Golosiivska -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/go1.jpg" alt="Golosiivska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Golosiivska Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2010</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/go1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/go2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/go3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/go4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vasylkivska -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/va1.jpg" alt="Vasylkivska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Vasylkivska Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2010</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/va1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/va2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/va3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/va4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Chervonyi Khutir -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/ch1.jpg" alt="Chervonyi Khutir" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Chervonyi Khutir İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2008</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/ch1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ch2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Kharkivskyi Elektrik Deposu -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/ka1.jpg" alt="Kharkivskyi" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Kharkivskyi Elektrik Deposu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2007</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/ka1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ka2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ka3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ka4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vyrlytsia -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/vyr1.jpg" alt="Vyrlytsia" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Vyrlytsia Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2006</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/vyr1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vyr2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/vyr3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Boryspilska -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/bo1.jpg" alt="Boryspilska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Boryspilska Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2005</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/bo1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/bo2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/bo3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/bo4.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Akademmistechko -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/ak1.jpg" alt="Akademmistechko" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Akademmistechko İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/ak1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/ak2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Syretska -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/sy1.jpg" alt="Syretska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Syretska Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/sy1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/sy2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/sy3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Zhytomyrska -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/metro/zh1.jpg" alt="Zhytomyrska" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Metro</span>
+              <h5 class="card-title-custom">Zhytomyrska Metro İstasyonu</h5>
+              <p class="card-text-custom">Kiev, Ukrayna</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/metro/zh1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/metro/zh2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ========== DAM PROJECTS ========== -->
+        
+        <!-- Dnister Pump -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="dam">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/dam/dnister_pump.jpg" alt="Dnister Pump" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Baraj</span>
+              <h5 class="card-title-custom">Dnister Pompa Santrali</h5>
+              <p class="card-text-custom">Pompa biriktirmeli santral inşaatı. 7 pompa deposu, 32m derinlik, 50m yükseklik.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 1983</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dinçer Barajı -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="dam">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/dam/din21.jpg" alt="Dinçer Barajı" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Baraj</span>
+              <h5 class="card-title-custom">Dinçer Barajı Projesi</h5>
+              <p class="card-text-custom">Baraj ve sulama sistemi.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Türkiye</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/dam/din21.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/din22.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/din23.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sadak Barajı - Devam Eden -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="dam ongoing">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/dam/sadak-1.jpg" alt="Sadak Barajı" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Devam Ediyor</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Baraj</span>
+              <h5 class="card-title-custom">Sadak Barajı Sulaması</h5>
+              <p class="card-text-custom">73.600 dekar sulama. 68.218 m CTP, 207.055 m PE100 boru.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Türkiye</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/dam/sadak-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/sadak-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/sadak-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Domaniç Barajı - Devam Eden -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="dam ongoing">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/dam/dom1.jpeg" alt="Domaniç Barajı" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Devam Ediyor</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Baraj</span>
+              <h5 class="card-title-custom">Kütahya Domaniç Barajı</h5>
+              <p class="card-text-custom">51.83 m yükseklik, 3.37 milyon m³ kapasite.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Kütahya</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2017+</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/dam/dom1.jpeg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/dom2.jpeg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/dam/dom3.jpeg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ========== INFRASTRUCTURE PROJECTS ========== -->
+        
+        <!-- Kentsel Kanalizasyon -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="infrastructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/infrastructure/kent1.jpg" alt="Kanalizasyon" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Altyapı</span>
+              <h5 class="card-title-custom">Kentsel Ana Kanalizasyon Hattı</h5>
+              <p class="card-text-custom">9.8 km kanalizasyon boru hattı. 9.5-63m derinlik, 2.76m çap.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Kiev</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/infrastructure/kent1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/kent2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/kent3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mustafa Kemal Sahil Bulvarı -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="infrastructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/infrastructure/mksb-1.jpg" alt="Mustafa Kemal" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Altyapı</span>
+              <h5 class="card-title-custom">Mustafa Kemal Sahil Bulvarı</h5>
+              <p class="card-text-custom">1150 metrelik güzergahta altyapı ve sanat yapıları.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Türkiye</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2016</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/infrastructure/mksb-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/mksb-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/mksb-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- İzmir Asfalt -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="infrastructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/infrastructure/izmir-1.jpg" alt="İzmir" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Altyapı</span>
+              <h5 class="card-title-custom">İzmir Asfalt Kaplama</h5>
+              <p class="card-text-custom">60.000 ton binder, 40.000 ton aşınma asfalt.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> İzmir</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2018</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/infrastructure/izmir-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/izmir-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/izmir-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- İzmir Su -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="infrastructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/infrastructure/izsu-1.jpg" alt="İZSU" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Altyapı</span>
+              <h5 class="card-title-custom">İZSU Altyapı Projesi</h5>
+              <p class="card-text-custom">İzmir su altyapı sistemi.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> İzmir</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/infrastructure/izsu-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/izsu-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/infrastructure/izsu-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ========== SUPERSTRUCTURE PROJECTS ========== -->
+        
+        <!-- Karayolları -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="superstructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/superstructure/ky1.jpg" alt="Karayolları" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Üstyapı</span>
+              <h5 class="card-title-custom">Karayolları Hizmet Binası</h5>
+              <p class="card-text-custom">70.000 m² akıllı bina. 14 kat, 3 bodrum.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Türkiye</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2017</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/superstructure/ky1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/ky2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/ky3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- DSİ 21 -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="superstructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/superstructure/dsi1.jpg" alt="DSİ" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Üstyapı</span>
+              <h5 class="card-title-custom">DSİ 21. Bölge Müdürlüğü</h5>
+              <p class="card-text-custom">13711 m² idare binası.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Türkiye</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2020</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/superstructure/dsi1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/dsi2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/dsi3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- DSİ 213 -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="superstructure ongoing">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/superstructure/dsi213-1.jpg" alt="DSİ 213" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Devam Ediyor</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Üstyapı</span>
+              <h5 class="card-title-custom">DSİ 213. Şube Müdürlüğü</h5>
+              <p class="card-text-custom">Hizmet binası inşaatı.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Türkiye</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/superstructure/dsi213-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/dsi213-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/superstructure/dsi213-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ========== INTERNATIONAL PROJECTS ========== -->
+        
+        <!-- Dwarka -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/dwarka.png" alt="Dwarka" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Uluslararası</span>
+              <h5 class="card-title-custom">Dwarka Metro İstasyonu</h5>
+              <p class="card-text-custom">Hindistan'ın en büyük metro istasyonu. Güneş enerjisi santrali.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Hindistan</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2014</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Indore -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/indore.png" alt="Indore" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Uluslararası</span>
+              <h5 class="card-title-custom">Indore Havalimanı</h5>
+              <p class="card-text-custom">Yaklaşma hatları, hizmet binaları, yeraltı otoparkı.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Hindistan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Voronez -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/voronez.png" alt="Voronez" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Uluslararası</span>
+              <h5 class="card-title-custom">Voronez Demiryolu Tüneli</h5>
+              <p class="card-text-custom">700 m uzunluk, 8.5 m yükseklik.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Rusya</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Novoriski -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/novoriski.png" alt="Novoriski" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Uluslararası</span>
+              <h5 class="card-title-custom">Novoriski Petrol Tüneli</h5>
+              <p class="card-text-custom">3.3 km uzunluk, 5.6 m çap.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Rusya</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2012</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Havaalanı - International -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="international">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/international/havaalanı-1.jpg" alt="Havaalanı" loading="lazy">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Uluslararası</span>
+              <h5 class="card-title-custom">Havalimanı Projesi</h5>
+              <p class="card-text-custom">Terminal ve pist altyapısı.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Uluslararası</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/international/havaalanı-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/international/havaalanı-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/international/havaalanı-3.JPG" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ========== ONGOING PROJECTS ========== -->
+        
+        <!-- Kyiv Metro Ongoing -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="ongoing metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/ongoing/newmetro-1.jpg" alt="Kyiv Metro" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Devam Ediyor</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Devam Eden</span>
+              <h5 class="card-title-custom">Syrets-Vynohradar Metro Hattı</h5>
+              <p class="card-text-custom">3.7 km hat. Mostytska ve Prospekt Pravdy istasyonları.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Kiev</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2018+</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/ongoing/newmetro-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/newmetro-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/newmetro-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dnipro Metro -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="ongoing metro">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/ongoing/dnipro-1.jpg" alt="Dnipro" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Devam Ediyor</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Devam Eden</span>
+              <h5 class="card-title-custom">Dnipro Metro Projesi</h5>
+              <p class="card-text-custom">4 km, 3 istasyon. NATM yöntemi.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Ukrayna</span>
+                <span class="card-meta-item"><i class="bi bi-calendar"></i> 2016+</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/ongoing/dnipro-1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/dnipro-2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/dnipro-3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Maraş -->
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="ongoing infrastructure">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="../../assets/images/projects/ongoing/maras1.jpg" alt="Maraş" loading="lazy">
+              <div class="card-image-overlay"></div>
+              <span class="badge bg-warning position-absolute top-0 end-0 m-3">Devam Ediyor</span>
+            </div>
+            <div class="card-body-custom">
+              <span class="card-category">Devam Eden</span>
+              <h5 class="card-title-custom">Kahramanmaraş Projesi</h5>
+              <p class="card-text-custom">Altyapı ve inşaat projesi.</p>
+              <div class="card-meta">
+                <span class="card-meta-item"><i class="bi bi-geo-alt"></i> Maraş</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <img src="../../assets/images/projects/ongoing/maras1.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/maras2.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+                <img src="../../assets/images/projects/ongoing/maras3.jpg" alt="" class="rounded" style="width: 45px; height: 32px; object-fit: cover; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <img src="../../assets/images/ui/KMB_logo.JPG" alt="KMB" style="height: 40px; border-radius: 8px; margin-right: 10px;">
+            <span class="text-accent">KMB</span> Metro Altyapı
+          </div>
+          <p class="footer-description mt-3">1949'dan bu yana altyapı ve metro inşaatında lider firma.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-title">Hızlı Linkler</h6>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Ana Sayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="projeler.html">Projeler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-title">Hizmetler</h6>
+          <ul class="footer-links">
+            <li><a href="hizmetler.html">Metro</a></li>
+            <li><a href="hizmetler.html">Baraj</a></li>
+            <li><a href="hizmetler.html">Tünel</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="footer-title">İletişim</h6>
+          <div class="footer-contact-item"><i class="bi bi-telephone"></i><span>+90 312 945 25 15</span></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope"></i><span>info@kmbmetroaltyapi.com</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 KMB Metro Altyapı. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
