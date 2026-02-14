@@ -708,6 +708,59 @@ a:hover {
 }
 
 /* ========================================
+   CONTACT FORM INPUTS
+   ======================================== */
+.form-input-custom {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: all var(--transition-base);
+}
+
+.form-input-custom::placeholder {
+  color: var(--color-text-muted) !important;
+  opacity: 0.7;
+}
+
+.form-input-custom:hover {
+  background-color: var(--color-bg-card-hover) !important;
+  border-color: var(--color-border-light) !important;
+}
+
+.form-input-custom:focus {
+  background-color: var(--color-bg-card) !important;
+  border-color: var(--color-accent-primary) !important;
+  box-shadow: 0 0 0 3px var(--color-accent-glow) !important;
+  outline: none;
+}
+
+.form-input-custom.is-invalid {
+  border-color: var(--color-danger) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Select dropdown arrow color fix */
+.form-input-custom option {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+/* Form alert styles */
+#formAlert.alert-success {
+  background-color: rgba(34, 197, 94, 0.15);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+#formAlert.alert-danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 .footer {

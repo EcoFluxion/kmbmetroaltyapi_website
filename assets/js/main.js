@@ -321,40 +321,99 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // ========================================
-  // FORM VALIDATION
+  // EMAILJS CONFIGURATION
   // ========================================
-  const contactForm = document.querySelector('form');
-  
+  // TODO: Replace these with your actual EmailJS credentials
+  const EMAILJS_PUBLIC_KEY = 'bHxT_md5dAeZASps8';
+  const EMAILJS_SERVICE_ID = 'service_z3w30kg';      // Gmail - info@kmbmetroaltyapi.com
+  const EMAILJS_TEMPLATE_ID = 'template_wq1ss8j';   // Contact Us template
+
+  // Initialize EmailJS
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
+
+  // ========================================
+  // CONTACT FORM - VALIDATION & SUBMISSION
+  // ========================================
+  const contactForm = document.getElementById('contactForm');
+
   if (contactForm) {
+    // Remove invalid state on input
+    contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+      field.addEventListener('input', function() {
+        this.classList.remove('is-invalid');
+      });
+    });
+
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Simple validation
-      const inputs = this.querySelectorAll('input, textarea');
+
+      // Validate required fields
+      const fields = this.querySelectorAll('input, textarea, select');
       let isValid = true;
-      
-      inputs.forEach(input => {
-        if (input.hasAttribute('required') && !input.value.trim()) {
+
+      fields.forEach(field => {
+        if (field.hasAttribute('required') && !field.value.trim()) {
           isValid = false;
-          input.classList.add('is-invalid');
+          field.classList.add('is-invalid');
         } else {
-          input.classList.remove('is-invalid');
+          field.classList.remove('is-invalid');
         }
       });
-      
-      if (isValid) {
-        // Show success message
-        const btn = this.querySelector('button[type="submit"]');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="bi bi-check-circle"></i> Gönderildi!';
-        btn.disabled = true;
-        
-        setTimeout(() => {
+
+      if (!isValid) return;
+
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      const formAlert = document.getElementById('formAlert');
+      const isTurkish = document.documentElement.lang === 'tr';
+
+      // Disable button and show loading
+      btn.innerHTML = '<i class="bi bi-hourglass-split"></i> ' + (isTurkish ? 'Gönderiliyor...' : 'Sending...');
+      btn.disabled = true;
+      formAlert.className = 'alert d-none mb-3';
+
+      // Collect form data for EmailJS template
+      // Variable names must match {{variables}} in EmailJS template
+      const templateParams = {
+        name: contactForm.querySelector('[name="name"]').value,
+        email: contactForm.querySelector('[name="email"]').value,
+        phone: contactForm.querySelector('[name="phone"]') ? contactForm.querySelector('[name="phone"]').value : '-',
+        company: contactForm.querySelector('[name="company"]') ? contactForm.querySelector('[name="company"]').value : '-',
+        title: contactForm.querySelector('[name="subject"]').value,
+        message: contactForm.querySelector('[name="message"]').value
+      };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function() {
+        // Show success
+        formAlert.className = 'alert alert-success mb-3';
+        formAlert.innerHTML = '<i class="bi bi-check-circle-fill"></i> ' +
+          (isTurkish ? 'Mesajınız başarıyla gönderildi!' : 'Your message has been sent successfully!');
+        btn.innerHTML = '<i class="bi bi-check-circle"></i> ' + (isTurkish ? 'Gönderildi!' : 'Sent!');
+        contactForm.reset();
+
+        setTimeout(function() {
           btn.innerHTML = originalText;
           btn.disabled = false;
-          this.reset();
-        }, 3000);
-      }
+          formAlert.className = 'alert d-none mb-3';
+        }, 5000);
+      })
+      .catch(function() {
+        // Show error
+        formAlert.className = 'alert alert-danger mb-3';
+        formAlert.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i> ' +
+          (isTurkish
+            ? 'Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyiniz.'
+            : 'An error occurred while sending the message. Please try again.');
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+
+        setTimeout(function() {
+          formAlert.className = 'alert d-none mb-3';
+        }, 5000);
+      });
     });
   }
   
