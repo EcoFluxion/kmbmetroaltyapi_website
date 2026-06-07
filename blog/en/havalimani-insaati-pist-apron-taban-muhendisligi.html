@@ -39,7 +39,7 @@
 body{background:var(--pg);color:var(--tx);font-family:'Outfit','Segoe UI',system-ui,sans-serif;}
 a{color:var(--acc);}
 /* ---- blog nav ---- */
-.bnav{background:rgba(13,17,23,.92);backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d;padding:.55rem 0;}
+.bnav{position:fixed!important;top:0;left:0;right:0;z-index:1031;background:rgba(13,17,23,.92)!important;backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d!important;padding:.55rem 0;}
 .bnav .navbar-brand{display:flex;align-items:center;gap:.55rem;font-family:'Sora','Outfit',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
 .bnav .navbar-brand img{height:40px;border-radius:8px;}
 .bnav .nav-link{color:#c9d1d9;font-weight:600;font-size:.95rem;padding:.4rem .8rem;border-radius:8px;transition:.2s;}
@@ -111,7 +111,27 @@ a{color:var(--acc);}
 .bfoot li{margin-bottom:.5rem;font-size:.92rem;}
 .bfoot .fcontact i{color:var(--acc);width:18px;}
 .bfoot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);}
-@media(max-width:600px){.article-hero{padding:2rem 1.3rem;}}
+.hero-credit{font-size:.74rem;color:var(--txm);margin:-1.2rem 0 1.4rem;text-align:right;}
+.hero-credit a{color:var(--txm);}
+.article-backtop{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem;padding:.42rem .95rem;border:1px solid var(--bd);border-radius:50px;color:var(--acc);font-weight:600;font-size:.85rem;text-decoration:none;transition:.2s;}
+.article-backtop:hover{background:var(--acc);color:#fff;border-color:var(--acc);}
+.article-hero{min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;}
+.post-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.8rem 0 1rem;}
+.post-pager a{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;background:var(--card);transition:.2s;min-width:0;}
+.post-pager a:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4);}
+.post-pager .lbl{font-size:.78rem;color:var(--acc);font-weight:700;}
+.post-pager .ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:700;font-size:.98rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.post-pager .next{text-align:right;align-items:flex-end;}
+.related{margin:3rem 0 1rem;}
+.related h3{font-family:'Sora','Outfit',sans-serif;font-weight:700;font-size:1.3rem;color:var(--hd);margin-bottom:1rem;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+.related-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--card);text-decoration:none;display:flex;flex-direction:column;transition:.2s;}
+.related-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.4);}
+.related-card .rc-top{height:100px;background-size:cover;background-position:center;background-color:var(--card2);}
+.related-card .rc-body{padding:.8rem .9rem;}
+.related-card .rc-cat{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);font-weight:700;}
+.related-card .rc-ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:600;font-size:.9rem;line-height:1.3;margin-top:.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+@media(max-width:600px){.article-hero{padding:2rem 1.3rem;min-height:230px;}.post-pager{grid-template-columns:1fr;}}
 </style>
   <script type="application/ld+json">
 {
@@ -235,11 +255,13 @@ a{color:var(--acc);}
     </div>
   </nav>
   <main class="article-wrap">
+    <a href="/blog/en/" class="article-backtop"><i class="bi bi-arrow-left"></i> All Articles</a>
     <nav class="breadcrumb-nav"><a href="/">KMB Metro Altyapı</a> / <a href="/blog/en/">Blog</a> / Airport Construction: Runway, Apron and Pavement Engineering</nav>
-    <div class="article-hero">
+    <div class="article-hero" style="background:linear-gradient(165deg,rgba(0,0,0,.20),rgba(0,0,0,.66)),url('/blog/img/havalimani-insaati-pist-apron-taban-muhendisligi.jpg') center/cover;">
       <div class="cat">Transport Infrastructure</div>
       <h1>Airport Construction: Runway, Apron and Pavement Engineering</h1>
     </div>
+    <p class="hero-credit">Image: Yamaguchi Yoshiaki from Japan · CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Construction_site_of_D_runway_on_Tokyo_international_airport_(3224723035).jpg" target="_blank" rel="noopener nofollow">Wikimedia Commons</a></p>
     <p class="article-sub">Every safe landing rests on engineering decisions buried beneath kilometres of concrete and asphalt. We walk step by step through how airport pavements are designed and built.</p>
     <div class="article-meta">
       <span><i class="bi bi-clock"></i> 11 min read</span>
@@ -266,6 +288,8 @@ a{color:var(--acc);}
     </article>
     <div class="takeaways"><h3>Key takeaways</h3><ul><li>An airport pavement is a complete system of subgrade, sub-base, base and surface, not a single layer.</li><li>Design starts with site investigation and CBR; weak soils require improvement such as stone columns, jet grouting or preloading.</li><li>Rigid (concrete) pavement is often chosen for aprons and taxiways, flexible (asphalt) pavement for runways.</li><li>The PCN-ACN (and newer ACR-PCR) system matches pavement capacity to aircraft load to drive thickness.</li><li>Geometric tolerances, drainage and friction are critical for flight safety and verified by continuous measurement.</li><li>Correct early decisions and regular maintenance are the main drivers of pavement life-cycle cost.</li></ul></div>
     <div class="faq-wrap"><h3>Frequently Asked Questions</h3><details class="faq-item"><summary>Is a runway built from concrete or asphalt?</summary><div class="faq-a">Both are used. Along the runway, flexible (asphalt) pavement is usually preferred because it is placed quickly, has a low initial cost and is easy to repair. On aprons and taxiway intersections, where aircraft stand, brake and fuel is spilled, rigid (concrete) pavement is common for its durability. Mature projects often use the two together.</div></details><details class="faq-item"><summary>What do PCN and ACN mean?</summary><div class="faq-a">ACN (Aircraft Classification Number) expresses the relative effect of an aircraft on a pavement, while PCN (Pavement Classification Number) expresses the pavement bearing capacity, both as numbers. An aircraft is granted unrestricted operation only when its ACN is equal to or less than the pavement PCN. International aviation is gradually migrating this system to the ACR-PCR method.</div></details><details class="faq-item"><summary>How is an airport built on weak ground?</summary><div class="faq-a">On weak ground, ground improvement is done first. In soft clay, preloading and vertical drains accelerate consolidation; in granular soils, dynamic compaction, stone columns or jet grouting raise bearing capacity and stiffness. The pavement is placed only after improvement is verified with settlement plates and piezometers, because the ground cannot be corrected once the runway is cast.</div></details><details class="faq-item"><summary>How long does an airport runway last?</summary><div class="faq-a">A well-designed and regularly maintained runway can serve for decades. Asphalt surfaces require periodic resurfacing, while rigid concrete slabs last longer but have a higher initial cost and construction time. Lifespan is set by correct initial decisions plus a disciplined asset-management plan covering crack monitoring, joint maintenance, friction measurement and drainage upkeep.</div></details></div>
+    <section class="related"><h3>Related Articles</h3><div class="related-grid"><a class="related-card" href="/blog/en/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.jpg');"></div><div class="rc-body"><div class="rc-cat">Industry Guide</div><div class="rc-ttl">How to Choose an Infrastructure and Metro Construction Contractor: Key Criteria</div></div></a><a class="related-card" href="/blog/en/baraj-insaati-asamalari-ve-muhendisligi.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/baraj-insaati-asamalari-ve-muhendisligi.jpg');"></div><div class="rc-body"><div class="rc-cat">Hydraulic Structures &amp; Energy</div><div class="rc-ttl">Stages and Engineering of Dam Construction: From Design to Impounding</div></div></a><a class="related-card" href="/blog/en/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.jpg');"></div><div class="rc-body"><div class="rc-cat">Metro &amp; Rail Systems</div><div class="rc-ttl">How Is Railway and High-Speed Train Infrastructure Built?</div></div></a></div></section>
+    <nav class="post-pager" aria-label="Post navigation"><a class="prev" href="/blog/en/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html"><span class="lbl">← Previous</span><span class="ttl">How Is Railway and High-Speed Train Infrastructure Built?</span></a><a class="next" href="/blog/en/kentsel-altyapi-kanalizasyon-kolektor-sebekesi-projeleri.html"><span class="lbl">Next →</span><span class="ttl">How Are Urban Infrastructure and Sewer (Collector) Network Projects Built?</span></a></nav>
     <div class="cta-box"><h3>KMB Metro Altyapı</h3><p>Expert guides and industry insights on metro, tunnel, railway, dam and infrastructure engineering.</p><a class="btn" href="/pages/en/contact.html">Get in Touch</a></div>
     <a href="/blog/en/" class="article-back"><i class="bi bi-arrow-left"></i> All articles</a>
   </main>

@@ -39,7 +39,7 @@
 body{background:var(--pg);color:var(--tx);font-family:'Outfit','Segoe UI',system-ui,sans-serif;}
 a{color:var(--acc);}
 /* ---- blog nav ---- */
-.bnav{background:rgba(13,17,23,.92);backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d;padding:.55rem 0;}
+.bnav{position:fixed!important;top:0;left:0;right:0;z-index:1031;background:rgba(13,17,23,.92)!important;backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d!important;padding:.55rem 0;}
 .bnav .navbar-brand{display:flex;align-items:center;gap:.55rem;font-family:'Sora','Outfit',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
 .bnav .navbar-brand img{height:40px;border-radius:8px;}
 .bnav .nav-link{color:#c9d1d9;font-weight:600;font-size:.95rem;padding:.4rem .8rem;border-radius:8px;transition:.2s;}
@@ -111,7 +111,27 @@ a{color:var(--acc);}
 .bfoot li{margin-bottom:.5rem;font-size:.92rem;}
 .bfoot .fcontact i{color:var(--acc);width:18px;}
 .bfoot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);}
-@media(max-width:600px){.article-hero{padding:2rem 1.3rem;}}
+.hero-credit{font-size:.74rem;color:var(--txm);margin:-1.2rem 0 1.4rem;text-align:right;}
+.hero-credit a{color:var(--txm);}
+.article-backtop{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem;padding:.42rem .95rem;border:1px solid var(--bd);border-radius:50px;color:var(--acc);font-weight:600;font-size:.85rem;text-decoration:none;transition:.2s;}
+.article-backtop:hover{background:var(--acc);color:#fff;border-color:var(--acc);}
+.article-hero{min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;}
+.post-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.8rem 0 1rem;}
+.post-pager a{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;background:var(--card);transition:.2s;min-width:0;}
+.post-pager a:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4);}
+.post-pager .lbl{font-size:.78rem;color:var(--acc);font-weight:700;}
+.post-pager .ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:700;font-size:.98rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.post-pager .next{text-align:right;align-items:flex-end;}
+.related{margin:3rem 0 1rem;}
+.related h3{font-family:'Sora','Outfit',sans-serif;font-weight:700;font-size:1.3rem;color:var(--hd);margin-bottom:1rem;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+.related-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--card);text-decoration:none;display:flex;flex-direction:column;transition:.2s;}
+.related-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.4);}
+.related-card .rc-top{height:100px;background-size:cover;background-position:center;background-color:var(--card2);}
+.related-card .rc-body{padding:.8rem .9rem;}
+.related-card .rc-cat{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);font-weight:700;}
+.related-card .rc-ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:600;font-size:.9rem;line-height:1.3;margin-top:.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+@media(max-width:600px){.article-hero{padding:2rem 1.3rem;min-height:230px;}.post-pager{grid-template-columns:1fr;}}
 </style>
   <script type="application/ld+json">
 {
@@ -235,11 +255,13 @@ a{color:var(--acc);}
     </div>
   </nav>
   <main class="article-wrap">
+    <a href="/blog/" class="article-backtop"><i class="bi bi-arrow-left"></i> Tüm Yazılar</a>
     <nav class="breadcrumb-nav"><a href="/">KMB Metro Altyapı</a> / <a href="/blog/">Blog</a> / Baraj İnşaatının Aşamaları ve Mühendisliği: Tasarımdan Su Tutmaya</nav>
-    <div class="article-hero">
+    <div class="article-hero" style="background:linear-gradient(165deg,rgba(0,0,0,.20),rgba(0,0,0,.66)),url('/blog/img/baraj-insaati-asamalari-ve-muhendisligi.jpg') center/cover;">
       <div class="cat">Su Yapıları ve Enerji</div>
       <h1>Baraj İnşaatının Aşamaları ve Mühendisliği: Tasarımdan Su Tutmaya</h1>
     </div>
+    <p class="hero-credit">Görsel: Russell Lee · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Shasta_dam_under_construction_new_edit.jpg" target="_blank" rel="noopener nofollow">Wikimedia Commons</a></p>
     <p class="article-sub">Bir akarsuyun önüne set çekip enerji, içme suyu ve sulama için rezervuar oluşturmak; jeoloji, hidroloji ve yapı mühendisliğinin titizlikle örüldüğü çok yıllı bir süreçtir. Bu rehber, fizibiliteden su tutmaya kadar baraj inşaatının her aşamasını mühendislik diliyle açıklar.</p>
     <div class="article-meta">
       <span><i class="bi bi-clock"></i> 12 dk okuma</span>
@@ -266,6 +288,8 @@ a{color:var(--acc);}
     </article>
     <div class="takeaways"><h3>Öne çıkanlar</h3><ul><li>Baraj inşaatı yedi ana aşamadan oluşur: fizibilite, tasarım, derivasyon, temel hazırlığı, gövde, yardımcı yapılar ve su tutma; süreç çoğu zaman 4-8 yıl sürer.</li><li>Derivasyon tüneli ve batardolar, inşaat boyunca akarsuyu saptırarak şantiyenin kuru kalmasını sağlar; iyi tasarlanmamış derivasyon en büyük risklerden biridir.</li><li>Enjeksiyon perdesi ve drenaj sistemi, temelden sızmayı ve kaldırma kuvvetini kontrol eder; barajın güvenliği çoğu zaman gözden uzak bu temel detaylarında saklıdır.</li><li>Dolgu baraj zayıf temele ve sismik bölgeye toleranslıdır; beton baraj az yer kaplar ve taşkın aşırımına dayanıklıdır. Seçim jeoloji, malzeme ve vadi geometrisine bağlıdır.</li><li>Dolusavak fazla suyu güvenle tahliye eder; yetersiz dolusavak aşırı taşkında barajı yıkma riski taşır. Su tutma her zaman kontrollü ve kademeli yapılır.</li><li>Göletler küçük ölçekli olsa da aynı mühendislik ilkelerini taşır; KMB Metro Altyapı&#39;nın Sadak ve Kütahya Domaniç projeleri bu yaşam döngüsünün sahadaki örnekleridir.</li></ul></div>
     <div class="faq-wrap"><h3>Sıkça Sorulan Sorular</h3><details class="faq-item"><summary>Bir barajın inşaatı ne kadar sürer?</summary><div class="faq-a">Büyük bir baraj projesinin sahadaki inşaat süresi tipik olarak 4 ila 8 yıl arasındadır; buna fizibilite, etüt ve tasarım yılları eklendiğinde toplam süreç 10 yılı aşabilir. Süreyi belirleyen başlıca etkenler gövde tipi, yükseklik, jeoloji, iklim koşulları ve kritik dökümlerin kurak mevsime denk getirilme zorunluluğudur. SSB (silindirle sıkıştırılmış beton) gibi hızlı yöntemler gövde inşa süresini önemli ölçüde kısaltabilir.</div></details><details class="faq-item"><summary>Derivasyon tüneli neden gereklidir?</summary><div class="faq-a">Derivasyon tüneli, inşaat süresince akarsuyu gövde alanının etrafından dolaştırarak şantiyenin kuru çalışmasını sağlar. Olmadığı takdirde temel kazısı, enjeksiyon ve gövde inşası akan su içinde yapılamaz; ayrıca inşaat dönemindeki taşkınlar şantiyeyi sular altında bırakabilir. İnşaat bittiğinde tünel ya beton tıkaçla kapatılır ya da dipsavak veya enerji tüneli olarak kalıcı işleve dönüştürülür.</div></details><details class="faq-item"><summary>Dolgu baraj ile beton baraj arasındaki fark nedir?</summary><div class="faq-a">Dolgu barajlar kil, kum, çakıl ve kaya gibi doğal malzemeden inşa edilir; suyu kil çekirdek veya geçirimsiz bir yüzey perdesi tutar ve zayıf temellere, sismik bölgelere daha toleranslıdır. Beton barajlar (gravite, kemer veya payandalı) ise kendi ağırlığı ya da kemer etkisiyle suya direnir; daha az yer kaplar ve taşkın aşırımına dayanıklıdır ama sağlam kaya temel ve yüksek kaliteli beton üretimi gerektirir. Seçim büyük ölçüde temel jeolojisi, malzeme bulunabilirliği ve vadi geometrisine bağlıdır.</div></details><details class="faq-item"><summary>Su tutma (impounding) neden kademeli yapılır?</summary><div class="faq-a">Su tutma kademeli yapılır çünkü rezervuar dolarken gövde, temel ve yamaçlar daha önce hiç karşılaşmadıkları yükler altına girer. Su seviyesi ara kotlarda bekletilerek yükseltilir; bu sırada piyezometre, oturma plakası ve deformasyon ölçerlerle sızıntı ve hareket değerleri izlenir. Değerler güvenli sınırlarda kaldıkça dolum sürdürülür. İlk dolum bir barajın gerçek sınavıdır ve aceleye getirilemez.</div></details></div>
+    <section class="related"><h3>İlgili Yazılar</h3><div class="related-grid"><a class="related-card" href="/blog/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.jpg');"></div><div class="rc-body"><div class="rc-cat">Sektör Rehberi</div><div class="rc-ttl">Altyapı ve Metro Taahhüt Firması Nasıl Seçilir? Değerlendirme Kriterleri</div></div></a><a class="related-card" href="/blog/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.jpg');"></div><div class="rc-body"><div class="rc-cat">Metro ve Raylı Sistemler</div><div class="rc-ttl">Demiryolu ve Hızlı Tren Altyapısı Nasıl İnşa Edilir?</div></div></a><a class="related-card" href="/blog/havalimani-insaati-pist-apron-taban-muhendisligi.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/havalimani-insaati-pist-apron-taban-muhendisligi.jpg');"></div><div class="rc-body"><div class="rc-cat">Ulaştırma Altyapısı</div><div class="rc-ttl">Havalimanı İnşaatı: Pist, Apron ve Taban (Üstyapı) Mühendisliği</div></div></a></div></section>
+    <nav class="post-pager" aria-label="Yazı gezinmesi"><a class="prev" href="/blog/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><span class="lbl">← Önceki Yazı</span><span class="ttl">Altyapı ve Metro Taahhüt Firması Nasıl Seçilir? Değerlendirme Kriterleri</span></a><a class="next" href="/blog/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html"><span class="lbl">Sonraki Yazı →</span><span class="ttl">Demiryolu ve Hızlı Tren Altyapısı Nasıl İnşa Edilir?</span></a></nav>
     <div class="cta-box"><h3>KMB Metro Altyapı</h3><p>Metro, tünel, demiryolu, baraj ve altyapı mühendisliği üzerine uzman rehberler ve sektörel içgörüler.</p><a class="btn" href="/pages/tr/iletisim.html">İletişime Geçin</a></div>
     <a href="/blog/" class="article-back"><i class="bi bi-arrow-left"></i> Tüm yazılar</a>
   </main>

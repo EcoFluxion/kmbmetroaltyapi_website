@@ -39,7 +39,7 @@
 body{background:var(--pg);color:var(--tx);font-family:'Outfit','Segoe UI',system-ui,sans-serif;}
 a{color:var(--acc);}
 /* ---- blog nav ---- */
-.bnav{background:rgba(13,17,23,.92);backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d;padding:.55rem 0;}
+.bnav{position:fixed!important;top:0;left:0;right:0;z-index:1031;background:rgba(13,17,23,.92)!important;backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d!important;padding:.55rem 0;}
 .bnav .navbar-brand{display:flex;align-items:center;gap:.55rem;font-family:'Sora','Outfit',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
 .bnav .navbar-brand img{height:40px;border-radius:8px;}
 .bnav .nav-link{color:#c9d1d9;font-weight:600;font-size:.95rem;padding:.4rem .8rem;border-radius:8px;transition:.2s;}
@@ -111,7 +111,27 @@ a{color:var(--acc);}
 .bfoot li{margin-bottom:.5rem;font-size:.92rem;}
 .bfoot .fcontact i{color:var(--acc);width:18px;}
 .bfoot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);}
-@media(max-width:600px){.article-hero{padding:2rem 1.3rem;}}
+.hero-credit{font-size:.74rem;color:var(--txm);margin:-1.2rem 0 1.4rem;text-align:right;}
+.hero-credit a{color:var(--txm);}
+.article-backtop{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem;padding:.42rem .95rem;border:1px solid var(--bd);border-radius:50px;color:var(--acc);font-weight:600;font-size:.85rem;text-decoration:none;transition:.2s;}
+.article-backtop:hover{background:var(--acc);color:#fff;border-color:var(--acc);}
+.article-hero{min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;}
+.post-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.8rem 0 1rem;}
+.post-pager a{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;background:var(--card);transition:.2s;min-width:0;}
+.post-pager a:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4);}
+.post-pager .lbl{font-size:.78rem;color:var(--acc);font-weight:700;}
+.post-pager .ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:700;font-size:.98rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.post-pager .next{text-align:right;align-items:flex-end;}
+.related{margin:3rem 0 1rem;}
+.related h3{font-family:'Sora','Outfit',sans-serif;font-weight:700;font-size:1.3rem;color:var(--hd);margin-bottom:1rem;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+.related-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--card);text-decoration:none;display:flex;flex-direction:column;transition:.2s;}
+.related-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.4);}
+.related-card .rc-top{height:100px;background-size:cover;background-position:center;background-color:var(--card2);}
+.related-card .rc-body{padding:.8rem .9rem;}
+.related-card .rc-cat{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);font-weight:700;}
+.related-card .rc-ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:600;font-size:.9rem;line-height:1.3;margin-top:.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+@media(max-width:600px){.article-hero{padding:2rem 1.3rem;min-height:230px;}.post-pager{grid-template-columns:1fr;}}
 </style>
   <script type="application/ld+json">
 {
@@ -235,11 +255,13 @@ a{color:var(--acc);}
     </div>
   </nav>
   <main class="article-wrap">
+    <a href="/blog/" class="article-backtop"><i class="bi bi-arrow-left"></i> Tüm Yazılar</a>
     <nav class="breadcrumb-nav"><a href="/">KMB Metro Altyapı</a> / <a href="/blog/">Blog</a> / Kentsel Altyapı ve Kanalizasyon (Kolektör) Şebekesi Projeleri Nasıl Yapılır?</nav>
-    <div class="article-hero">
+    <div class="article-hero" style="background:linear-gradient(165deg,rgba(0,0,0,.20),rgba(0,0,0,.66)),url('/blog/img/kentsel-altyapi-kanalizasyon-kolektor-sebekesi-projeleri.jpg') center/cover;">
       <div class="cat">Kentsel Altyapı</div>
       <h1>Kentsel Altyapı ve Kanalizasyon (Kolektör) Şebekesi Projeleri Nasıl Yapılır?</h1>
     </div>
+    <p class="hero-credit">Görsel: Tomascastelazo · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Krah_HDPE_pipe_instalation_in_Mexico.jpg" target="_blank" rel="noopener nofollow">Wikimedia Commons</a></p>
     <p class="article-sub">Bir kentin altında görünmeyen ama hayati önemdeki kanalizasyon, kolektör ve içme suyu şebekeleri; doğru güzergah, kazı ve entegrasyon kararlarıyla on yıllarca sorunsuz çalışır. Belediyeler ve yatırımcılar için adım adım rehber.</p>
     <div class="article-meta">
       <span><i class="bi bi-clock"></i> 11 dk okuma</span>
@@ -266,6 +288,8 @@ a{color:var(--acc);}
     </article>
     <div class="takeaways"><h3>Öne çıkanlar</h3><ul><li>Kanalizasyon şebekesi yer çekimiyle çalışır; güzergah en düşük kotlardan geçer ve eğim, çökelmeyi önleyen hız (0,6-0,7 m/s) ile aşınma sınırı arasında dengelenir.</li><li>Hatlar bugüne değil 25-30 yıllık gelecek nüfusa göre boyutlandırılmalı; yetersiz boyutlandırma erken yenileme maliyeti doğurur.</li><li>Boru malzemesi (HDPE, CTP, beton, font, PE 100, çelik) çapa, zemin kimyasına ve yüke göre seçilmeli; conta ve sızdırmazlık testi şarttır.</li><li>Açık kazı ucuzdur; ancak yoğun kent merkezinde mikrotünel ve diğer kazısız yöntemler toplam sosyal maliyette çoğu zaman daha avantajlıdır.</li><li>İçme suyu hattı, kontaminasyona karşı kanalizasyonun üzerinde ve yeterli mesafede döşenir; diğer altyapılarla çakışma BIM ile önceden çözülür.</li><li>Kalite; nivelman, Proctor sıkıştırma, basınç ve CCTV testleriyle belgelenir ve şebeke GIS&#39;e işlenerek varlık olarak yönetilmelidir.</li></ul></div>
     <div class="faq-wrap"><h3>Sıkça Sorulan Sorular</h3><details class="faq-item"><summary>Kolektör hattı ile normal kanalizasyon hattı arasındaki fark nedir?</summary><div class="faq-a">Kolektör, bir kanalizasyon havzasının ana toplayıcısıdır; tali ve ana hatların tamamından gelen debiyi taşır ve atıksuyu arıtma tesisine ulaştırır. Genellikle 600-2000 mm arası büyük çaplıdır ve şehrin en düşük kotunu izler. Normal kanalizasyon hattı ise daha küçük çaplı (örneğin 200-400 mm), sokak ve mahalle ölçeğinde atıksuyu toplayıp kolektöre ileten tali veya ana hattır.</div></details><details class="faq-item"><summary>Açık kazı mı yoksa kazısız (trenchless) yöntem mi tercih edilmeli?</summary><div class="faq-a">Karar; derinliğe, zemine, su tablasına ve özellikle çevresel etkiye bağlıdır. Sığ hatlar ve açık/yeni gelişme alanlarında açık kazı en ekonomik yöntemdir. Derin kolektörlerde, yüksek su tablasında, trafiği yoğun arterlerde ve tarihi dokuda ise mikrotünel veya yatay sondaj gibi kazısız yöntemler; trafik, esnaf ve yol üstyapısı maliyetleri hesaba katıldığında toplam maliyette çoğu zaman daha avantajlı olur.</div></details><details class="faq-item"><summary>İçme suyu ve kanalizasyon hatları aynı hendekte döşenebilir mi?</summary><div class="faq-a">Kontaminasyon riski nedeniyle aynı seviyede yan yana döşenmeleri tercih edilmez. Mühendislik kuralı; içme suyu hattının kanalizasyonun üzerinde ve yatayda yeterli mesafede (tipik olarak en az 1 metre) bulunmasıdır. Hatların kesişmesi zorunlu olduğunda içme suyu üstten geçirilir ve gerekirse kılıf boru ya da beton koruma uygulanır. Bu kurallar yeraltı suyunun ve içme suyunun atıksuyla kirlenmesini önler.</div></details><details class="faq-item"><summary>Bir kanalizasyon ve içme suyu şebekesinin hizmet ömrü ne kadardır?</summary><div class="faq-a">Doğru malzemeyle, doğru eğim ve sıkıştırmayla, sızdırmazlık testleri yapılarak inşa edilen ve düzenli bakımı yapılan bir şebeke 50 yıl ve üzeri hizmet verebilir; bazı modern boru malzemeleri için tasarım ömrü 100 yıla kadar ifade edilir. Ömrü kısaltan başlıca etkenler yetersiz boyutlandırma, kötü yataklama, agresif zeminde yanlış malzeme seçimi ve bakımsızlıktır. Belgelenmiş kalite kontrol ve GIS tabanlı varlık yönetimi, ömrü doğrudan uzatır.</div></details></div>
+    <section class="related"><h3>İlgili Yazılar</h3><div class="related-grid"><a class="related-card" href="/blog/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.jpg');"></div><div class="rc-body"><div class="rc-cat">Sektör Rehberi</div><div class="rc-ttl">Altyapı ve Metro Taahhüt Firması Nasıl Seçilir? Değerlendirme Kriterleri</div></div></a><a class="related-card" href="/blog/baraj-insaati-asamalari-ve-muhendisligi.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/baraj-insaati-asamalari-ve-muhendisligi.jpg');"></div><div class="rc-body"><div class="rc-cat">Su Yapıları ve Enerji</div><div class="rc-ttl">Baraj İnşaatının Aşamaları ve Mühendisliği: Tasarımdan Su Tutmaya</div></div></a><a class="related-card" href="/blog/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.jpg');"></div><div class="rc-body"><div class="rc-cat">Metro ve Raylı Sistemler</div><div class="rc-ttl">Demiryolu ve Hızlı Tren Altyapısı Nasıl İnşa Edilir?</div></div></a></div></section>
+    <nav class="post-pager" aria-label="Yazı gezinmesi"><a class="prev" href="/blog/havalimani-insaati-pist-apron-taban-muhendisligi.html"><span class="lbl">← Önceki Yazı</span><span class="ttl">Havalimanı İnşaatı: Pist, Apron ve Taban (Üstyapı) Mühendisliği</span></a><a class="next" href="/blog/kopru-ve-viyaduk-insaat-teknikleri.html"><span class="lbl">Sonraki Yazı →</span><span class="ttl">Köprü ve Viyadük İnşaat Teknikleri: Dengeli Konsol, İtme-Sürme ve Daha Fazlası</span></a></nav>
     <div class="cta-box"><h3>KMB Metro Altyapı</h3><p>Metro, tünel, demiryolu, baraj ve altyapı mühendisliği üzerine uzman rehberler ve sektörel içgörüler.</p><a class="btn" href="/pages/tr/iletisim.html">İletişime Geçin</a></div>
     <a href="/blog/" class="article-back"><i class="bi bi-arrow-left"></i> Tüm yazılar</a>
   </main>

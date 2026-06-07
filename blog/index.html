@@ -33,7 +33,7 @@
 body{background:var(--pg);color:var(--tx);font-family:'Outfit','Segoe UI',system-ui,sans-serif;}
 a{color:var(--acc);}
 /* ---- blog nav ---- */
-.bnav{background:rgba(13,17,23,.92);backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d;padding:.55rem 0;}
+.bnav{position:fixed!important;top:0;left:0;right:0;z-index:1031;background:rgba(13,17,23,.92)!important;backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d!important;padding:.55rem 0;}
 .bnav .navbar-brand{display:flex;align-items:center;gap:.55rem;font-family:'Sora','Outfit',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
 .bnav .navbar-brand img{height:40px;border-radius:8px;}
 .bnav .nav-link{color:#c9d1d9;font-weight:600;font-size:.95rem;padding:.4rem .8rem;border-radius:8px;transition:.2s;}
@@ -105,7 +105,27 @@ a{color:var(--acc);}
 .bfoot li{margin-bottom:.5rem;font-size:.92rem;}
 .bfoot .fcontact i{color:var(--acc);width:18px;}
 .bfoot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);}
-@media(max-width:600px){.article-hero{padding:2rem 1.3rem;}}
+.hero-credit{font-size:.74rem;color:var(--txm);margin:-1.2rem 0 1.4rem;text-align:right;}
+.hero-credit a{color:var(--txm);}
+.article-backtop{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem;padding:.42rem .95rem;border:1px solid var(--bd);border-radius:50px;color:var(--acc);font-weight:600;font-size:.85rem;text-decoration:none;transition:.2s;}
+.article-backtop:hover{background:var(--acc);color:#fff;border-color:var(--acc);}
+.article-hero{min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;}
+.post-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.8rem 0 1rem;}
+.post-pager a{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;background:var(--card);transition:.2s;min-width:0;}
+.post-pager a:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4);}
+.post-pager .lbl{font-size:.78rem;color:var(--acc);font-weight:700;}
+.post-pager .ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:700;font-size:.98rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.post-pager .next{text-align:right;align-items:flex-end;}
+.related{margin:3rem 0 1rem;}
+.related h3{font-family:'Sora','Outfit',sans-serif;font-weight:700;font-size:1.3rem;color:var(--hd);margin-bottom:1rem;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+.related-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--card);text-decoration:none;display:flex;flex-direction:column;transition:.2s;}
+.related-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.4);}
+.related-card .rc-top{height:100px;background-size:cover;background-position:center;background-color:var(--card2);}
+.related-card .rc-body{padding:.8rem .9rem;}
+.related-card .rc-cat{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);font-weight:700;}
+.related-card .rc-ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:600;font-size:.9rem;line-height:1.3;margin-top:.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+@media(max-width:600px){.article-hero{padding:2rem 1.3rem;min-height:230px;}.post-pager{grid-template-columns:1fr;}}
 </style>
   <script type="application/ld+json">
 {
@@ -214,7 +234,7 @@ a{color:var(--acc);}
   </header>
   <section class="blog-grid">
       <article class="blog-card">
-        <a href="/blog/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html" class="blog-card-top"><span class="cat">Sektör Rehberi</span></a>
+        <a href="/blog/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.jpg');"><span class="cat">Sektör Rehberi</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html">Altyapı ve Metro Taahhüt Firması Nasıl Seçilir? Değerlendirme Kriterleri</a></h2>
           <p>Altyapı ve metro taahhüt firması seçerken nelere dikkat edilmeli? Referans projeler, ISO 9001 kalite, jeoteknik yetkinlik ve uluslararası tecrübe kriterlerini anlatıyoruz.</p>
@@ -223,7 +243,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/baraj-insaati-asamalari-ve-muhendisligi.html" class="blog-card-top"><span class="cat">Su Yapıları ve Enerji</span></a>
+        <a href="/blog/baraj-insaati-asamalari-ve-muhendisligi.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/baraj-insaati-asamalari-ve-muhendisligi.jpg');"><span class="cat">Su Yapıları ve Enerji</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/baraj-insaati-asamalari-ve-muhendisligi.html">Baraj İnşaatının Aşamaları ve Mühendisliği: Tasarımdan Su Tutmaya</a></h2>
           <p>Baraj inşaatı aşamaları nelerdir? Derivasyon tüneli, temel hazırlığı, gövde tipleri (dolgu/beton) ve su tutma dahil baraj yapım sürecini mühendislikle anlatıyoruz.</p>
@@ -232,7 +252,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html" class="blog-card-top"><span class="cat">Metro ve Raylı Sistemler</span></a>
+        <a href="/blog/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.jpg');"><span class="cat">Metro ve Raylı Sistemler</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html">Demiryolu ve Hızlı Tren Altyapısı Nasıl İnşa Edilir?</a></h2>
           <p>Demiryolu ve hızlı tren altyapısı nasıl inşa edilir? Platform, balast, ray, köprü-tünel geçişleri ve elektrifikasyon dahil yapım aşamalarını açıklıyoruz.</p>
@@ -241,7 +261,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/havalimani-insaati-pist-apron-taban-muhendisligi.html" class="blog-card-top"><span class="cat">Ulaştırma Altyapısı</span></a>
+        <a href="/blog/havalimani-insaati-pist-apron-taban-muhendisligi.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/havalimani-insaati-pist-apron-taban-muhendisligi.jpg');"><span class="cat">Ulaştırma Altyapısı</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/havalimani-insaati-pist-apron-taban-muhendisligi.html">Havalimanı İnşaatı: Pist, Apron ve Taban (Üstyapı) Mühendisliği</a></h2>
           <p>Havalimanı inşaatı nasıl yapılır? Pist, apron ve taban (üstyapı) mühendisliği, zemin iyileştirme ve kaplama tasarımı dahil yapım sürecini açıklıyoruz.</p>
@@ -250,7 +270,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/kentsel-altyapi-kanalizasyon-kolektor-sebekesi-projeleri.html" class="blog-card-top"><span class="cat">Kentsel Altyapı</span></a>
+        <a href="/blog/kentsel-altyapi-kanalizasyon-kolektor-sebekesi-projeleri.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/kentsel-altyapi-kanalizasyon-kolektor-sebekesi-projeleri.jpg');"><span class="cat">Kentsel Altyapı</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/kentsel-altyapi-kanalizasyon-kolektor-sebekesi-projeleri.html">Kentsel Altyapı ve Kanalizasyon (Kolektör) Şebekesi Projeleri Nasıl Yapılır?</a></h2>
           <p>Kentsel altyapı, kanalizasyon ve kolektör şebekesi projeleri nasıl planlanır ve inşa edilir? Hat güzergahı, kazı, boru döşeme ve şebeke entegrasyonunu açıklıyoruz.</p>
@@ -259,7 +279,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/kopru-ve-viyaduk-insaat-teknikleri.html" class="blog-card-top"><span class="cat">Köprü ve Viyadük</span></a>
+        <a href="/blog/kopru-ve-viyaduk-insaat-teknikleri.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/kopru-ve-viyaduk-insaat-teknikleri.jpg');"><span class="cat">Köprü ve Viyadük</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/kopru-ve-viyaduk-insaat-teknikleri.html">Köprü ve Viyadük İnşaat Teknikleri: Dengeli Konsol, İtme-Sürme ve Daha Fazlası</a></h2>
           <p>Köprü ve viyadük inşaat teknikleri nelerdir? Dengeli konsol, itme-sürme (incremental launching) ve öngerilmeli beton yöntemlerini örneklerle açıklıyoruz.</p>
@@ -268,7 +288,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/metro-insaati-nasil-yapilir-asama-asama-surec.html" class="blog-card-top"><span class="cat">Metro ve Raylı Sistemler</span></a>
+        <a href="/blog/metro-insaati-nasil-yapilir-asama-asama-surec.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/metro-insaati-nasil-yapilir-asama-asama-surec.jpg');"><span class="cat">Metro ve Raylı Sistemler</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/metro-insaati-nasil-yapilir-asama-asama-surec.html">Metro İnşaatı Nasıl Yapılır? Aşama Aşama Yapım Süreci ve Yöntemleri</a></h2>
           <p>Metro inşaatı nasıl yapılır? Zemin etüdünden tünel açmaya, istasyon yapımından test sürecine metro projelerinin tüm aşamalarını mühendis gözüyle açıklıyoruz.</p>
@@ -277,7 +297,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.html" class="blog-card-top"><span class="cat">Tünel Mühendisliği</span></a>
+        <a href="/blog/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.jpg');"><span class="cat">Tünel Mühendisliği</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.html">NATM, TBM ve Aç-Kapa Yöntemi Karşılaştırması: Hangi Tünel Yöntemi Ne Zaman?</a></h2>
           <p>NATM, TBM ve aç-kapa (cut and cover) yöntemlerini maliyet, hız, zemin koşulu ve derinliğe göre karşılaştırıyoruz. Hangi tünel yöntemi hangi projeye uygun?</p>
@@ -286,7 +306,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/natm-yeni-avusturya-tunel-acma-yontemi-nedir.html" class="blog-card-top"><span class="cat">Tünel Mühendisliği</span></a>
+        <a href="/blog/natm-yeni-avusturya-tunel-acma-yontemi-nedir.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/natm-yeni-avusturya-tunel-acma-yontemi-nedir.jpg');"><span class="cat">Tünel Mühendisliği</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/natm-yeni-avusturya-tunel-acma-yontemi-nedir.html">NATM (Yeni Avusturya Tünel Açma Yöntemi) Nedir, Nasıl Uygulanır?</a></h2>
           <p>NATM yani Yeni Avusturya Tünel Açma Yöntemi nedir? Delme-patlatma esaslı bu yöntemin prensiplerini, kademelerini ve uygulama koşullarını mühendislik diliyle anlatıyoruz.</p>
@@ -295,7 +315,7 @@ a{color:var(--acc);}
         </div>
       </article>
       <article class="blog-card">
-        <a href="/blog/tbm-tunel-acma-makinesi-ile-tunel-insaati.html" class="blog-card-top"><span class="cat">Tünel Mühendisliği</span></a>
+        <a href="/blog/tbm-tunel-acma-makinesi-ile-tunel-insaati.html" class="blog-card-top" style="background-image:linear-gradient(160deg,rgba(0,0,0,.10),rgba(0,0,0,.55)),url('/blog/img/tbm-tunel-acma-makinesi-ile-tunel-insaati.jpg');"><span class="cat">Tünel Mühendisliği</span></a>
         <div class="blog-card-body">
           <h2><a href="/blog/tbm-tunel-acma-makinesi-ile-tunel-insaati.html">TBM (Tünel Açma Makinesi) ile Tünel İnşaatı Nasıl Yapılır?</a></h2>
           <p>TBM (tünel açma makinesi) ile tünel inşaatı nasıl yapılır? Kesici kafa, segment montajı ve enjeksiyon dahil çalışma prensibini ve avantajlarını açıklıyoruz.</p>

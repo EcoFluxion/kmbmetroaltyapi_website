@@ -39,7 +39,7 @@
 body{background:var(--pg);color:var(--tx);font-family:'Outfit','Segoe UI',system-ui,sans-serif;}
 a{color:var(--acc);}
 /* ---- blog nav ---- */
-.bnav{background:rgba(13,17,23,.92);backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d;padding:.55rem 0;}
+.bnav{position:fixed!important;top:0;left:0;right:0;z-index:1031;background:rgba(13,17,23,.92)!important;backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d!important;padding:.55rem 0;}
 .bnav .navbar-brand{display:flex;align-items:center;gap:.55rem;font-family:'Sora','Outfit',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
 .bnav .navbar-brand img{height:40px;border-radius:8px;}
 .bnav .nav-link{color:#c9d1d9;font-weight:600;font-size:.95rem;padding:.4rem .8rem;border-radius:8px;transition:.2s;}
@@ -111,7 +111,27 @@ a{color:var(--acc);}
 .bfoot li{margin-bottom:.5rem;font-size:.92rem;}
 .bfoot .fcontact i{color:var(--acc);width:18px;}
 .bfoot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);}
-@media(max-width:600px){.article-hero{padding:2rem 1.3rem;}}
+.hero-credit{font-size:.74rem;color:var(--txm);margin:-1.2rem 0 1.4rem;text-align:right;}
+.hero-credit a{color:var(--txm);}
+.article-backtop{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem;padding:.42rem .95rem;border:1px solid var(--bd);border-radius:50px;color:var(--acc);font-weight:600;font-size:.85rem;text-decoration:none;transition:.2s;}
+.article-backtop:hover{background:var(--acc);color:#fff;border-color:var(--acc);}
+.article-hero{min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;}
+.post-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.8rem 0 1rem;}
+.post-pager a{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;background:var(--card);transition:.2s;min-width:0;}
+.post-pager a:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4);}
+.post-pager .lbl{font-size:.78rem;color:var(--acc);font-weight:700;}
+.post-pager .ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:700;font-size:.98rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.post-pager .next{text-align:right;align-items:flex-end;}
+.related{margin:3rem 0 1rem;}
+.related h3{font-family:'Sora','Outfit',sans-serif;font-weight:700;font-size:1.3rem;color:var(--hd);margin-bottom:1rem;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+.related-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--card);text-decoration:none;display:flex;flex-direction:column;transition:.2s;}
+.related-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.4);}
+.related-card .rc-top{height:100px;background-size:cover;background-position:center;background-color:var(--card2);}
+.related-card .rc-body{padding:.8rem .9rem;}
+.related-card .rc-cat{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);font-weight:700;}
+.related-card .rc-ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:600;font-size:.9rem;line-height:1.3;margin-top:.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+@media(max-width:600px){.article-hero{padding:2rem 1.3rem;min-height:230px;}.post-pager{grid-template-columns:1fr;}}
 </style>
   <script type="application/ld+json">
 {
@@ -235,11 +255,13 @@ a{color:var(--acc);}
     </div>
   </nav>
   <main class="article-wrap">
+    <a href="/blog/" class="article-backtop"><i class="bi bi-arrow-left"></i> Tüm Yazılar</a>
     <nav class="breadcrumb-nav"><a href="/">KMB Metro Altyapı</a> / <a href="/blog/">Blog</a> / NATM (Yeni Avusturya Tünel Açma Yöntemi) Nedir, Nasıl Uygulanır?</nav>
-    <div class="article-hero">
+    <div class="article-hero" style="background:linear-gradient(165deg,rgba(0,0,0,.20),rgba(0,0,0,.66)),url('/blog/img/natm-yeni-avusturya-tunel-acma-yontemi-nedir.jpg') center/cover;">
       <div class="cat">Tünel Mühendisliği</div>
       <h1>NATM (Yeni Avusturya Tünel Açma Yöntemi) Nedir, Nasıl Uygulanır?</h1>
     </div>
+    <p class="hero-credit">Görsel: MTA Capital Construction Mega Projects · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Installation_of_Shotcrete_at_the_Tunnel_A_entrance_portal_for_the_Track_A_approach_structure._(CH061A,_12-19-2017)_(27443605139).jpg" target="_blank" rel="noopener nofollow">Wikimedia Commons</a></p>
     <p class="article-sub">Zemini bir yük değil, taşıyıcı bir bileşen olarak kullanan NATM yöntemini; prensiplerini, kazı kademelerini, tahkimat sistemlerini ve hangi koşullarda TBM&#39;in önüne geçtiğini mühendis gözüyle açıklıyoruz.</p>
     <div class="article-meta">
       <span><i class="bi bi-clock"></i> 9 dk okuma</span>
@@ -264,6 +286,8 @@ a{color:var(--acc);}
     </article>
     <div class="takeaways"><h3>Öne çıkanlar</h3><ul><li>NATM, çevre zemini bir yük değil, tünelin ana taşıyıcı bileşeni olarak kullanan gözleme dayalı bir kazı yöntemidir.</li><li>Temel prensip kontrollü deformasyondur: zeminin bir miktar yer değiştirmesine izin verilip, ince püskürtme beton ve kaya saplamasıyla durdurulur.</li><li>Kazı, zemin kalitesine göre tam kesit veya kademeli (kalota-stross-invert) olarak yapılır; delme-patlatma çevrimi tahkimatla tamamlanır.</li><li>Ana tahkimat elemanları püskürtme beton, kaya saplaması ve çelik iksa kemerleridir; birlikte esnek bir destek sistemi oluşturur.</li><li>NATM, değişken jeolojide, geniş ve düzensiz kesitlerde (örn. metro istasyonları) ve kısa tünellerde TBM&#39;e göre daha esnek ve ekonomiktir.</li><li>Başarının anahtarı sistematik deformasyon ölçümü, zamanında tahkimat ve ISO 9001 düzeyinde disiplinli kalite kontrolüdür.</li></ul></div>
     <div class="faq-wrap"><h3>Sıkça Sorulan Sorular</h3><details class="faq-item"><summary>NATM ile delme-patlatma yöntemi aynı şey midir?</summary><div class="faq-a">Hayır. Delme-patlatma bir kazı tekniğidir; NATM ise bir tasarım ve uygulama felsefesidir. NATM çoğu zaman delme-patlatma ile yürütülür, ancak mekanik kazıyla da (kazıcı kol, ekskavatör) uygulanabilir. NATM&#39;yi tanımlayan asıl unsur patlatma değil; zemini taşıyıcı eleman olarak kullanma, kontrollü deformasyona izin verme ve sürekli ölçüme dayalı esnek tahkimat yaklaşımıdır.</div></details><details class="faq-item"><summary>NATM hangi zeminlerde tercih edilmemelidir?</summary><div class="faq-a">Duraylılık süresi neredeyse sıfır olan, yüksek su basıncı altındaki gevşek kum-çakıl ve akıcı zeminler NATM için risklidir; çünkü kazıdan sonra tahkimat kurulana kadar açıklık ayakta kalamaz. Bu koşullarda ya zemini iyileştirmek (enjeksiyon, dondurma, boru şemsiye gibi ileri destek) ya da basınçlı yüzeyli (kapalı) bir TBM kullanmak daha güvenlidir.</div></details><details class="faq-item"><summary>Püskürtme beton tek başına yükü taşır mı?</summary><div class="faq-a">Hayır. Püskürtme betonun asıl işlevi açıkta kalan zemin yüzeyini mühürleyip ayrışmasını önlemek ve yükü çevre zemin halkasına dağıtmaktır. Yükün büyük kısmını, kaya saplamalarıyla bağlanıp kendini taşıyan zemin halkası taşır. Zayıf zeminlerde püskürtme betona çelik hasır, tel takviyesi ve iksa kemerleri eklenerek erken yük taşıma kapasitesi artırılır.</div></details><details class="faq-item"><summary>Bir metro projesinde NATM ve TBM birlikte kullanılabilir mi?</summary><div class="faq-a">Evet, bu çok yaygın bir pratiktir. Uzun ve sabit dairesel kesitli hat tünelleri genellikle TBM ile hızlı ve güvenli biçimde açılırken; geniş, düzensiz ve özel kesitli istasyonlar, makas bölgeleri ve bağlantı yapıları NATM ile açılır. Doğru yöntemi doğru kesite eşlemek, projenin hem maliyetini hem de risk profilini doğrudan iyileştirir.</div></details></div>
+    <section class="related"><h3>İlgili Yazılar</h3><div class="related-grid"><a class="related-card" href="/blog/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.jpg');"></div><div class="rc-body"><div class="rc-cat">Tünel Mühendisliği</div><div class="rc-ttl">NATM, TBM ve Aç-Kapa Yöntemi Karşılaştırması: Hangi Tünel Yöntemi Ne Zaman?</div></div></a><a class="related-card" href="/blog/tbm-tunel-acma-makinesi-ile-tunel-insaati.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/tbm-tunel-acma-makinesi-ile-tunel-insaati.jpg');"></div><div class="rc-body"><div class="rc-cat">Tünel Mühendisliği</div><div class="rc-ttl">TBM (Tünel Açma Makinesi) ile Tünel İnşaatı Nasıl Yapılır?</div></div></a><a class="related-card" href="/blog/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.jpg');"></div><div class="rc-body"><div class="rc-cat">Sektör Rehberi</div><div class="rc-ttl">Altyapı ve Metro Taahhüt Firması Nasıl Seçilir? Değerlendirme Kriterleri</div></div></a></div></section>
+    <nav class="post-pager" aria-label="Yazı gezinmesi"><a class="prev" href="/blog/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.html"><span class="lbl">← Önceki Yazı</span><span class="ttl">NATM, TBM ve Aç-Kapa Yöntemi Karşılaştırması: Hangi Tünel Yöntemi Ne Zaman?</span></a><a class="next" href="/blog/tbm-tunel-acma-makinesi-ile-tunel-insaati.html"><span class="lbl">Sonraki Yazı →</span><span class="ttl">TBM (Tünel Açma Makinesi) ile Tünel İnşaatı Nasıl Yapılır?</span></a></nav>
     <div class="cta-box"><h3>KMB Metro Altyapı</h3><p>Metro, tünel, demiryolu, baraj ve altyapı mühendisliği üzerine uzman rehberler ve sektörel içgörüler.</p><a class="btn" href="/pages/tr/iletisim.html">İletişime Geçin</a></div>
     <a href="/blog/" class="article-back"><i class="bi bi-arrow-left"></i> Tüm yazılar</a>
   </main>

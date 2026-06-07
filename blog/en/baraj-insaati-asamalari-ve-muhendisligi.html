@@ -39,7 +39,7 @@
 body{background:var(--pg);color:var(--tx);font-family:'Outfit','Segoe UI',system-ui,sans-serif;}
 a{color:var(--acc);}
 /* ---- blog nav ---- */
-.bnav{background:rgba(13,17,23,.92);backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d;padding:.55rem 0;}
+.bnav{position:fixed!important;top:0;left:0;right:0;z-index:1031;background:rgba(13,17,23,.92)!important;backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d!important;padding:.55rem 0;}
 .bnav .navbar-brand{display:flex;align-items:center;gap:.55rem;font-family:'Sora','Outfit',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
 .bnav .navbar-brand img{height:40px;border-radius:8px;}
 .bnav .nav-link{color:#c9d1d9;font-weight:600;font-size:.95rem;padding:.4rem .8rem;border-radius:8px;transition:.2s;}
@@ -111,7 +111,27 @@ a{color:var(--acc);}
 .bfoot li{margin-bottom:.5rem;font-size:.92rem;}
 .bfoot .fcontact i{color:var(--acc);width:18px;}
 .bfoot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);}
-@media(max-width:600px){.article-hero{padding:2rem 1.3rem;}}
+.hero-credit{font-size:.74rem;color:var(--txm);margin:-1.2rem 0 1.4rem;text-align:right;}
+.hero-credit a{color:var(--txm);}
+.article-backtop{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem;padding:.42rem .95rem;border:1px solid var(--bd);border-radius:50px;color:var(--acc);font-weight:600;font-size:.85rem;text-decoration:none;transition:.2s;}
+.article-backtop:hover{background:var(--acc);color:#fff;border-color:var(--acc);}
+.article-hero{min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;}
+.post-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.8rem 0 1rem;}
+.post-pager a{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;background:var(--card);transition:.2s;min-width:0;}
+.post-pager a:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4);}
+.post-pager .lbl{font-size:.78rem;color:var(--acc);font-weight:700;}
+.post-pager .ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:700;font-size:.98rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.post-pager .next{text-align:right;align-items:flex-end;}
+.related{margin:3rem 0 1rem;}
+.related h3{font-family:'Sora','Outfit',sans-serif;font-weight:700;font-size:1.3rem;color:var(--hd);margin-bottom:1rem;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+.related-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--card);text-decoration:none;display:flex;flex-direction:column;transition:.2s;}
+.related-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.4);}
+.related-card .rc-top{height:100px;background-size:cover;background-position:center;background-color:var(--card2);}
+.related-card .rc-body{padding:.8rem .9rem;}
+.related-card .rc-cat{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);font-weight:700;}
+.related-card .rc-ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:600;font-size:.9rem;line-height:1.3;margin-top:.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+@media(max-width:600px){.article-hero{padding:2rem 1.3rem;min-height:230px;}.post-pager{grid-template-columns:1fr;}}
 </style>
   <script type="application/ld+json">
 {
@@ -235,11 +255,13 @@ a{color:var(--acc);}
     </div>
   </nav>
   <main class="article-wrap">
+    <a href="/blog/en/" class="article-backtop"><i class="bi bi-arrow-left"></i> All Articles</a>
     <nav class="breadcrumb-nav"><a href="/">KMB Metro Altyapı</a> / <a href="/blog/en/">Blog</a> / Stages and Engineering of Dam Construction: From Design to Impounding</nav>
-    <div class="article-hero">
+    <div class="article-hero" style="background:linear-gradient(165deg,rgba(0,0,0,.20),rgba(0,0,0,.66)),url('/blog/img/baraj-insaati-asamalari-ve-muhendisligi.jpg') center/cover;">
       <div class="cat">Hydraulic Structures &amp; Energy</div>
       <h1>Stages and Engineering of Dam Construction: From Design to Impounding</h1>
     </div>
+    <p class="hero-credit">Image: Russell Lee · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Shasta_dam_under_construction_new_edit.jpg" target="_blank" rel="noopener nofollow">Wikimedia Commons</a></p>
     <p class="article-sub">Damming a river to create a reservoir for energy, drinking water and irrigation is a multi-year process where geology, hydrology and structural engineering are woven together with precision. This guide walks through every stage of dam construction, from feasibility to impounding, in engineering terms.</p>
     <div class="article-meta">
       <span><i class="bi bi-clock"></i> 12 min read</span>
@@ -266,6 +288,8 @@ a{color:var(--acc);}
     </article>
     <div class="takeaways"><h3>Key takeaways</h3><ul><li>Dam construction has seven main stages: feasibility, design, diversion, foundation works, body, ancillary structures and impounding; the process usually takes 4-8 years.</li><li>Diversion tunnels and cofferdams reroute the river so the site stays dry during construction; a poorly designed diversion is one of the biggest project risks.</li><li>The grout curtain and drainage system control seepage and uplift from the foundation; a dam&#39;s safety often lies in these out-of-sight foundation details.</li><li>Embankment dams tolerate weak foundations and seismic zones; concrete dams take less space and resist flood overtopping. The choice depends on geology, material and valley geometry.</li><li>The spillway safely discharges excess water; an undersized spillway risks overtopping and failure in extreme floods. Impounding is always controlled and gradual.</li><li>Ponds are small-scale but follow the same engineering principles; KMB Metro Altyapı&#39;s Sadak and Kütahya Domaniç projects are field examples of this lifecycle.</li></ul></div>
     <div class="faq-wrap"><h3>Frequently Asked Questions</h3><details class="faq-item"><summary>How long does it take to build a dam?</summary><div class="faq-a">The on-site construction of a large dam typically takes 4 to 8 years; adding the years of feasibility, investigation and design, the total process can exceed a decade. The main factors are the dam type, height, geology, climate conditions and the need to time critical pours for the dry season. Fast methods such as RCC (roller-compacted concrete) can significantly shorten the body construction period.</div></details><details class="faq-item"><summary>Why is a diversion tunnel necessary?</summary><div class="faq-a">A diversion tunnel routes the river around the dam footprint during construction so the site can work dry. Without it, foundation excavation, grouting and body construction cannot be carried out in flowing water, and construction-period floods could submerge the site. When construction is finished, the tunnel is either sealed with a concrete plug or converted into a permanent outlet or power tunnel.</div></details><details class="faq-item"><summary>What is the difference between an embankment dam and a concrete dam?</summary><div class="faq-a">Embankment dams are built from natural materials such as clay, sand, gravel and rock; water is held by a clay core or an impervious face, and they are more tolerant of weak foundations and seismic zones. Concrete dams (gravity, arch or buttress) resist water through their own weight or arch action; they take up less space and resist overtopping but require a sound rock foundation and high-quality concrete. The choice depends largely on foundation geology, material availability and valley geometry.</div></details><details class="faq-item"><summary>Why is impounding done gradually?</summary><div class="faq-a">Impounding is done gradually because, as the reservoir fills, the body, foundation and abutments come under loads they have never experienced before. The water level is raised in increments, held at intermediate elevations while seepage and movement readings are monitored with piezometers, settlement plates and deformation gauges. Filling continues as long as the values stay within safe limits. First filling is a dam&#39;s true test and cannot be rushed.</div></details></div>
+    <section class="related"><h3>Related Articles</h3><div class="related-grid"><a class="related-card" href="/blog/en/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.jpg');"></div><div class="rc-body"><div class="rc-cat">Industry Guide</div><div class="rc-ttl">How to Choose an Infrastructure and Metro Construction Contractor: Key Criteria</div></div></a><a class="related-card" href="/blog/en/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.jpg');"></div><div class="rc-body"><div class="rc-cat">Metro &amp; Rail Systems</div><div class="rc-ttl">How Is Railway and High-Speed Train Infrastructure Built?</div></div></a><a class="related-card" href="/blog/en/havalimani-insaati-pist-apron-taban-muhendisligi.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/havalimani-insaati-pist-apron-taban-muhendisligi.jpg');"></div><div class="rc-body"><div class="rc-cat">Transport Infrastructure</div><div class="rc-ttl">Airport Construction: Runway, Apron and Pavement Engineering</div></div></a></div></section>
+    <nav class="post-pager" aria-label="Post navigation"><a class="prev" href="/blog/en/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><span class="lbl">← Previous</span><span class="ttl">How to Choose an Infrastructure and Metro Construction Contractor: Key Criteria</span></a><a class="next" href="/blog/en/demiryolu-ve-hizli-tren-altyapisi-nasil-insa-edilir.html"><span class="lbl">Next →</span><span class="ttl">How Is Railway and High-Speed Train Infrastructure Built?</span></a></nav>
     <div class="cta-box"><h3>KMB Metro Altyapı</h3><p>Expert guides and industry insights on metro, tunnel, railway, dam and infrastructure engineering.</p><a class="btn" href="/pages/en/contact.html">Get in Touch</a></div>
     <a href="/blog/en/" class="article-back"><i class="bi bi-arrow-left"></i> All articles</a>
   </main>

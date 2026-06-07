@@ -39,7 +39,7 @@
 body{background:var(--pg);color:var(--tx);font-family:'Outfit','Segoe UI',system-ui,sans-serif;}
 a{color:var(--acc);}
 /* ---- blog nav ---- */
-.bnav{background:rgba(13,17,23,.92);backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d;padding:.55rem 0;}
+.bnav{position:fixed!important;top:0;left:0;right:0;z-index:1031;background:rgba(13,17,23,.92)!important;backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 #30363d!important;padding:.55rem 0;}
 .bnav .navbar-brand{display:flex;align-items:center;gap:.55rem;font-family:'Sora','Outfit',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;}
 .bnav .navbar-brand img{height:40px;border-radius:8px;}
 .bnav .nav-link{color:#c9d1d9;font-weight:600;font-size:.95rem;padding:.4rem .8rem;border-radius:8px;transition:.2s;}
@@ -111,7 +111,27 @@ a{color:var(--acc);}
 .bfoot li{margin-bottom:.5rem;font-size:.92rem;}
 .bfoot .fcontact i{color:var(--acc);width:18px;}
 .bfoot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);}
-@media(max-width:600px){.article-hero{padding:2rem 1.3rem;}}
+.hero-credit{font-size:.74rem;color:var(--txm);margin:-1.2rem 0 1.4rem;text-align:right;}
+.hero-credit a{color:var(--txm);}
+.article-backtop{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem;padding:.42rem .95rem;border:1px solid var(--bd);border-radius:50px;color:var(--acc);font-weight:600;font-size:.85rem;text-decoration:none;transition:.2s;}
+.article-backtop:hover{background:var(--acc);color:#fff;border-color:var(--acc);}
+.article-hero{min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;}
+.post-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.8rem 0 1rem;}
+.post-pager a{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;background:var(--card);transition:.2s;min-width:0;}
+.post-pager a:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4);}
+.post-pager .lbl{font-size:.78rem;color:var(--acc);font-weight:700;}
+.post-pager .ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:700;font-size:.98rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.post-pager .next{text-align:right;align-items:flex-end;}
+.related{margin:3rem 0 1rem;}
+.related h3{font-family:'Sora','Outfit',sans-serif;font-weight:700;font-size:1.3rem;color:var(--hd);margin-bottom:1rem;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+.related-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--card);text-decoration:none;display:flex;flex-direction:column;transition:.2s;}
+.related-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.4);}
+.related-card .rc-top{height:100px;background-size:cover;background-position:center;background-color:var(--card2);}
+.related-card .rc-body{padding:.8rem .9rem;}
+.related-card .rc-cat{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);font-weight:700;}
+.related-card .rc-ttl{font-family:'Sora','Outfit',sans-serif;color:var(--hd);font-weight:600;font-size:.9rem;line-height:1.3;margin-top:.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+@media(max-width:600px){.article-hero{padding:2rem 1.3rem;min-height:230px;}.post-pager{grid-template-columns:1fr;}}
 </style>
   <script type="application/ld+json">
 {
@@ -235,11 +255,13 @@ a{color:var(--acc);}
     </div>
   </nav>
   <main class="article-wrap">
+    <a href="/blog/en/" class="article-backtop"><i class="bi bi-arrow-left"></i> All Articles</a>
     <nav class="breadcrumb-nav"><a href="/">KMB Metro Altyapı</a> / <a href="/blog/en/">Blog</a> / NATM vs TBM vs Cut-and-Cover: Which Tunnelling Method to Choose and When</nav>
-    <div class="article-hero">
+    <div class="article-hero" style="background:linear-gradient(165deg,rgba(0,0,0,.20),rgba(0,0,0,.66)),url('/blog/img/natm-tbm-ac-kapa-tunel-yontemi-karsilastirma.jpg') center/cover;">
       <div class="cat">Tunnel Engineering</div>
       <h1>NATM vs TBM vs Cut-and-Cover: Which Tunnelling Method to Choose and When</h1>
     </div>
+    <p class="hero-credit">Image: Seattle Municipal Archives · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Seattle_-_Battery_Street_tunnel_under_construction,_1953.jpg" target="_blank" rel="noopener nofollow">Wikimedia Commons</a></p>
     <p class="article-sub">There is no single correct way to build a tunnel; the right method depends on ground, depth, length and budget. This guide compares the three core methods through an engineer&#39;s lens.</p>
     <div class="article-meta">
       <span><i class="bi bi-clock"></i> 11 min read</span>
@@ -266,6 +288,8 @@ a{color:var(--acc);}
     </article>
     <div class="takeaways"><h3>Key takeaways</h3><ul><li>There is no single best method; NATM, TBM and cut-and-cover are different tools for different conditions.</li><li>Cut-and-cover is the most economical option at shallow depths (roughly 0-15 m), but its urban impact is high because it opens the surface.</li><li>A TBM delivers speed and low surface settlement on long, urban lines, but demands high capital and a long setup time.</li><li>NATM is flexible in variable geology and for wide sections (stations, crossovers), yet it requires disciplined monitoring and an experienced crew.</li><li>In real projects the methods are used in hybrid form: TBM for the spans, cut-and-cover or NATM for the stations.</li><li>The decision should be made by weighing geotechnical investigation, depth, length, surface constraints and life-cycle cost together.</li></ul></div>
     <div class="faq-wrap"><h3>Frequently Asked Questions</h3><details class="faq-item"><summary>What is the basic difference between NATM and TBM?</summary><div class="faq-a">NATM is a sequential excavation method that mobilises the ground&#39;s own load-bearing capacity and builds flexible support from shotcrete and bolts, adapting easily to section changes on site. A TBM is a full-face machine that mechanically cuts the ground while erecting a segmental lining at the same time; it is far faster and more stable on long, uniform tunnels but requires high capital and a long setup time.</div></details><details class="faq-item"><summary>When is the cut-and-cover method preferred?</summary><div class="faq-a">Cut-and-cover is preferred when the structure is shallow (usually up to roughly 15-20 metres) and surface use can be managed. It is ideal for underground stations, underpasses, car parks and service galleries because wide rectangular sections are easily achieved. It loses its advantage as depth increases and where the surface carries heavy traffic or sensitive structures.</div></details><details class="faq-item"><summary>Is a single method used on a metro line?</summary><div class="faq-a">No, almost never. On a typical metro line, stations are usually built by cut-and-cover or NATM, the spans between stations by TBM, and connecting tunnels and crossovers by NATM. This hybrid approach optimises both cost and risk by using the most suitable method for each segment&#39;s conditions.</div></details><details class="faq-item"><summary>What is the most critical factor in method selection?</summary><div class="faq-a">The most critical factor is a thorough geotechnical and hydrogeological investigation. Any method debate held before the ground type, water table, depth and tunnel length are clear is speculative. When a sound investigation backed by boreholes and laboratory data is combined with depth, length, surface constraints and budget, the right method usually emerges on its own.</div></details></div>
+    <section class="related"><h3>Related Articles</h3><div class="related-grid"><a class="related-card" href="/blog/en/natm-yeni-avusturya-tunel-acma-yontemi-nedir.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/natm-yeni-avusturya-tunel-acma-yontemi-nedir.jpg');"></div><div class="rc-body"><div class="rc-cat">Tunnel Engineering</div><div class="rc-ttl">What Is NATM (New Austrian Tunnelling Method) and How Is It Applied?</div></div></a><a class="related-card" href="/blog/en/tbm-tunel-acma-makinesi-ile-tunel-insaati.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/tbm-tunel-acma-makinesi-ile-tunel-insaati.jpg');"></div><div class="rc-body"><div class="rc-cat">Tunnel Engineering</div><div class="rc-ttl">Tunnel Construction with a TBM (Tunnel Boring Machine): How It Works</div></div></a><a class="related-card" href="/blog/en/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.html"><div class="rc-top" style="background-image:linear-gradient(165deg,rgba(0,0,0,.12),rgba(0,0,0,.5)),url('/blog/img/altyapi-ve-metro-taahhut-firmasi-secimi-kriterleri.jpg');"></div><div class="rc-body"><div class="rc-cat">Industry Guide</div><div class="rc-ttl">How to Choose an Infrastructure and Metro Construction Contractor: Key Criteria</div></div></a></div></section>
+    <nav class="post-pager" aria-label="Post navigation"><a class="prev" href="/blog/en/metro-insaati-nasil-yapilir-asama-asama-surec.html"><span class="lbl">← Previous</span><span class="ttl">How Is a Metro Built? Step-by-Step Construction Process and Methods</span></a><a class="next" href="/blog/en/natm-yeni-avusturya-tunel-acma-yontemi-nedir.html"><span class="lbl">Next →</span><span class="ttl">What Is NATM (New Austrian Tunnelling Method) and How Is It Applied?</span></a></nav>
     <div class="cta-box"><h3>KMB Metro Altyapı</h3><p>Expert guides and industry insights on metro, tunnel, railway, dam and infrastructure engineering.</p><a class="btn" href="/pages/en/contact.html">Get in Touch</a></div>
     <a href="/blog/en/" class="article-back"><i class="bi bi-arrow-left"></i> All articles</a>
   </main>
